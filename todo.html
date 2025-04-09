@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini To-Do App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .todo-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: steelblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      margin-bottom: 5px;
+      background: #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .actions button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 8px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    #completedList li {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    text-decoration: line-through;
+  }
+
+  /* Pending Tasks */
+  #pendingList li {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+  }
+  .completed-container, .pending-container {
+    margin-top: 20px;
+    background: white;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+  }
+  .completed-container h3, .pending-container h3 {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+    
+  </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>📝 To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter your task..." />
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+      </div>
+      <div class="completed-container">
+        <h3>✅ Completed Tasks</h3>
+        <ul id="completedList"></ul>
+      </div>
+      <div class="pending-container">
+        <h3>⏳ Pending Tasks</h3>
+        <ul id="pendingList"></ul> <!-- Add this for the Pending List -->
+      </div>
+  <script src="todo.js"></script>
+</body>
+</html>
