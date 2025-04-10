@@ -15,7 +15,7 @@ function addTask() {
     const li = document.createElement("li");
     li.textContent = taskText;
   
-    // Actions container (Done & Cancel)
+    // Actions container (Done & Delete)
     const actions = document.createElement("div");
     actions.classList.add("actions");
   
@@ -25,32 +25,23 @@ function addTask() {
     doneBtn.style.background = "green";
     doneBtn.onclick = () => {
       // Move the task to the completed list
-      if (taskList.contains(li)) {
-        taskList.removeChild(li);
-      } else if (pendingList.contains(li)) {
-        pendingList.removeChild(li);
-      }
-      li.removeChild(actions); // Remove the actions (Done & Cancel buttons)
+      taskList.removeChild(li);
+      li.removeChild(actions); // Remove the actions (Done & Delete buttons)
       completedList.appendChild(li);
     };
   
-    // ❌ Cancel button
-    const cancelBtn = document.createElement("button");
-    cancelBtn.textContent = "✖";
-    cancelBtn.style.background = "red";
-    cancelBtn.onclick = () => {
-      // Move the task to the pending list
-      if (taskList.contains(li)) {
-        taskList.removeChild(li);
-      } else if (completedList.contains(li)) {
-        completedList.removeChild(li);
-      }
-      li.removeChild(actions); // Remove the actions (Done & Cancel buttons)
-      pendingList.appendChild(li);
+    // ❌ Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "✖";
+    deleteBtn.onclick = () => {
+      taskList.removeChild(li);
+      li.removeChild(actions); // Remove the actions (Done & Delete buttons)
+      pendingList.appendChild(li); // Move the task to the pending list
+      
     };
   
     actions.appendChild(doneBtn);
-    actions.appendChild(cancelBtn);
+    actions.appendChild(deleteBtn);
   
     li.appendChild(actions);
     taskList.appendChild(li);

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,6 +37,30 @@
         console.error('Error fetching the title:', error.message);
       }
     }
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter Username</title>
+</head>
+<body>
+  <h2>Enter Your Username</h2>
+  <form id="usernameForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('usernameForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      window.location.href = 'welcome.html';
+      
+    });
   </script>
 </body>
 </html>
