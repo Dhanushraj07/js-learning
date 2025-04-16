@@ -6,7 +6,7 @@ const app = express();
 const products = []; // Store products in memory
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.set('view engine', 'pug');
 // Pass `products` to each request
 app.use((req, res, next) => {
   req.products = products;

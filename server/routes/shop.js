@@ -6,7 +6,12 @@ router.get('/', (req, res, next) => {
 });
 module.exports = router;
 
-
+// router.get('/', (req, res, next) => {
+//     res.status(200).render('index',{
+//         docTitle : 'Shop List',
+//         name : 'Dhanush'
+//     });
+// });
 
 // const express = require('express');
 // const router = express.Router();

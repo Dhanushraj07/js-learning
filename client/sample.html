@@ -1,16 +1,36 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Event Listener Example</title>
+  <title>localStorage Example</title>
 </head>
 <body>
-  <button id="myButton">Click Me</button>
+  <input type="text" id="username" placeholder="Enter username">
+  <button onclick="saveUsername()">Save Username</button>
+  <button onclick="loadUsername()">Load Username</button>
+  <p id="display"></p>
 
   <script>
-   document.getElementById('myButton').addEventListener('click', function() {
-      alert('Button was clicked!!!!');
-    });
+    function saveUsername() {
+      const username = document.getElementById('username').value;
+      localStorage.setItem('user', username);
+      alert('Username saved!');
+    }
+
+    function loadUsername() {
+      const username = localStorage.getItem('user');
+      document.getElementById('display').textContent = username ? `Hello, ${username}!` : 'No username found.';
+    }
   </script>
 </body>
-</html>
+</html> -->
+
+
+
+<p>
+  Current status: <span id="status">Pending</span>
+</p>
+
+<script>
+  document.getElementById("status").textContent = "Approved";
+</script>

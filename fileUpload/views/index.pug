@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Upload Image
+  body
+    h1 Upload an Image
+    form(action="/upload" method="POST" enctype="multipart/form-data")
+      input(type="file" name="image" required)
+      button(type="submit") Upload
